@@ -1,0 +1,40 @@
+{
+  "identifier": "com.windfade.urban-dictionary",
+  "version": "0.1.0",
+  "category": "translate",
+  "name": "Urban Dictionary",
+  "summary": "Search slang meanings on Urban Dictionary with GPT analysis",
+  "author": "WindFade",
+  "homepage": "https://github.com/a322655/bob-plugin-urban-dictionary",
+  "minBobVersion": "0.5.0",
+  "options": [
+    {
+      "identifier": "apiKey",
+      "type": "text",
+      "title": "OpenAI API Key",
+      "desc": "Required for GPT analysis. Get one from https://platform.openai.com/account/api-keys",
+      "placeholder": "sk-..."
+    },
+    {
+      "identifier": "model",
+      "type": "menu",
+      "title": "OpenAI Model",
+      "desc": "Select which OpenAI model to use for analysis (gpt-4o-mini recommended for balance of cost and quality)",
+      "defaultValue": "gpt-4o-mini",
+      "menuValues": [
+        {
+          "title": "GPT-4o-mini",
+          "value": "gpt-4o-mini"
+        },
+        {
+          "title": "GPT-4o",
+          "value": "gpt-4o"
+        },
+        {
+          "title": "GPT-3.5-turbo",
+          "value": "gpt-3.5-turbo"
+        }
+      ]
+    }
+  ]
+}
