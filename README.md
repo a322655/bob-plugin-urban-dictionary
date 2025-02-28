@@ -42,7 +42,7 @@ _Read this in [简体中文](README_zh-cn.md)_
 - "Netflix and chill"
 - "sus"
 
-![example query](docs/assets/example.png)
+![example query](docs/assets/example-english.png)
 
 ## Configuration Options
 
