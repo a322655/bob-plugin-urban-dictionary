@@ -40,7 +40,7 @@
 - "Netflix and chill"
 - "sus"
 
-![示例查询](docs/assets/example.png)
+![示例查询](docs/assets/example-simplified-chinese.png)
 
 ## 配置选项
 
