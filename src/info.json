@@ -1,6 +1,6 @@
 {
   "identifier": "com.windfade.urban-dictionary",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "category": "translate",
   "name": "Urban Dictionary",
   "summary": "Search slang meanings on Urban Dictionary with GPT analysis",
@@ -13,28 +13,53 @@
       "type": "text",
       "title": "OpenAI API Key",
       "desc": "Required for GPT analysis. Get one from https://platform.openai.com/account/api-keys",
-      "placeholder": "sk-..."
+      "textConfig": {
+        "type": "secure",
+        "placeholderText": "sk-..."
+      }
     },
     {
       "identifier": "model",
       "type": "menu",
       "title": "OpenAI Model",
-      "desc": "Select which OpenAI model to use for analysis (gpt-4o-mini recommended for balance of cost and quality)",
-      "defaultValue": "gpt-4o-mini",
+      "desc": "Select which model to use for analysis",
+      "defaultValue": "gpt-5.2",
       "menuValues": [
         {
-          "title": "GPT-4o-mini",
-          "value": "gpt-4o-mini"
+          "title": "GPT-5.2",
+          "value": "gpt-5.2"
         },
         {
-          "title": "GPT-4o",
-          "value": "gpt-4o"
+          "title": "GPT-5.2 Pro",
+          "value": "gpt-5.2-pro"
         },
         {
-          "title": "GPT-3.5-turbo",
-          "value": "gpt-3.5-turbo"
+          "title": "GPT-5.2 Chat (Latest)",
+          "value": "gpt-5.2-chat-latest"
+        },
+        {
+          "title": "GPT-5 Mini",
+          "value": "gpt-5-mini"
+        },
+        {
+          "title": "GPT-5 Nano",
+          "value": "gpt-5-nano"
+        },
+        {
+          "title": "Custom",
+          "value": "custom"
         }
       ]
+    },
+    {
+      "identifier": "customModel",
+      "type": "text",
+      "title": "Custom Model Name",
+      "desc": "Enter custom model name when 'Custom' is selected above (e.g., gpt-4o-mini)",
+      "textConfig": {
+        "type": "visible",
+        "placeholderText": "gpt-4o-mini"
+      }
     }
   ]
 }
