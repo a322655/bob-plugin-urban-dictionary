@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build plugin
+        run: |
+          mkdir -p release
+          cd src
+          zip -r ../release/bob-plugin-urban-dictionary.bobplugin ./*
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/bob-plugin-urban-dictionary.bobplugin
+          generate_release_notes: true
