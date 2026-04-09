@@ -38,9 +38,9 @@ function translate(query, completion) {
 		return;
 	}
 
-	// Urban Dictionary only supports English input
-	const englishRegex = /^[A-Za-z0-9\s\-_.,!?'"():;]*$/;
-	if (!englishRegex.test(source)) {
+	// Urban Dictionary only supports ASCII input
+	const asciiRegex = /^[\x20-\x7E]*$/;
+	if (!asciiRegex.test(source)) {
 		completion({
 			error: {
 				type: "unsupportedLanguage",
