@@ -1,4 +1,4 @@
-var utils = require("./utils.js");
+const utils = require("./utils.js");
 
 /**
  * Fetch definitions from Urban Dictionary API
@@ -18,7 +18,7 @@ function fetchDefinitions(term, $http) {
 	};
 
 	return $http.request(options).then((response) => {
-		const list = response.data && response.data.list;
+		const list = response.data?.list;
 		if (!list || list.length === 0) {
 			return null;
 		}
