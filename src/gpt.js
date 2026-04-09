@@ -36,7 +36,7 @@ async function analyzeWithGPT(
 	const model =
 		options.model === "custom" && options.customModel
 			? options.customModel
-			: options.model || "gpt-5.2";
+			: options.model || "gpt-5.4";
 
 	if (!apiKey) {
 		throw new Error(
@@ -81,11 +81,7 @@ async function analyzeWithGPT(
 
 		// Parse Responses API output
 		// Structure: { output: [{ type: "message", content: [{ type: "output_text", text: "..." }] }] }
-		if (
-			response.data &&
-			response.data.output &&
-			response.data.output.length > 0
-		) {
+		if (response.data?.output && response.data.output.length > 0) {
 			// Find the message item in output array
 			let textContent = null;
 
@@ -126,7 +122,7 @@ async function analyzeWithGPT(
 		// Handle API errors
 		let errorMessage = "OpenAI API Error: ";
 
-		if (error.response && error.response.data && error.response.data.error) {
+		if (error.response?.data?.error) {
 			errorMessage += error.response.data.error.message;
 		} else {
 			errorMessage += error.message || "Unknown error";

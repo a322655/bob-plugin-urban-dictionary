@@ -51,13 +51,15 @@ The plugin provides the following configuration options:
 | Option         | Description                                | Required                     |
 | -------------- | ------------------------------------------ | ---------------------------- |
 | OpenAI API Key | API key for GPT analysis feature           | Yes (for GPT analysis only)  |
-| OpenAI Model   | Select which GPT model to use for analysis | No (defaults to gpt-4o-mini) |
+| OpenAI Model   | Select which GPT model to use for analysis | No (defaults to GPT-5.4)     |
 
 Available GPT model options:
 
-- **GPT-4o-mini** (recommended for balance of cost and quality)
-- **GPT-4o** (highest quality but more expensive)
-- **GPT-3.5-turbo** (lower cost but potentially lower quality analysis)
+- **GPT-5.4** (default, flagship model)
+- **GPT-5.4 Pro** (highest quality, uses more compute)
+- **GPT-5.4 Mini** (fast and cost-effective)
+- **GPT-5.4 Nano** (fastest and cheapest)
+- **Custom** (specify your own model name)
 
 ## Contributing
 
