@@ -1,6 +1,6 @@
 {
 	"identifier": "com.windfade.urban-dictionary",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"category": "translate",
 	"name": "Urban Dictionary",
 	"summary": "Search slang meanings on Urban Dictionary with GPT analysis",
