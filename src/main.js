@@ -16,7 +16,11 @@ function supportLanguages() {
  */
 function formatDefinitions(definitions) {
 	return definitions.map((def, i) => {
-		return `${i + 1}. ${def.definition}\n\nExample: ${def.example}\n\n(👍 ${def.thumbs_up} | 👎 ${def.thumbs_down})`;
+		const voteSummary = def.votesUnavailable
+			? ""
+			: `\n\n(👍 ${def.thumbs_up} | 👎 ${def.thumbs_down})`;
+
+		return `${i + 1}. ${def.definition}\n\nExample: ${def.example}${voteSummary}`;
 	});
 }
 
