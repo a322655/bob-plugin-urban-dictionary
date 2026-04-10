@@ -1,5 +1,10 @@
 const utils = require("./utils.js");
 
+function normalizeVoteCount(value) {
+	const voteCount = Number(value);
+	return Number.isFinite(voteCount) ? voteCount : 0;
+}
+
 /**
  * Fetch definitions from Urban Dictionary API
  * @param {string} term The term to look up
@@ -23,18 +28,25 @@ function fetchDefinitions(term, $http) {
 			return null;
 		}
 
-		// Sort by thumbs up count (most popular definitions first)
-		list.sort((a, b) => b.thumbs_up - a.thumbs_up);
-
-		// Take top 3 definitions and clean the text
-		const maxDefinitions = Math.min(3, list.length);
-		const topDefinitions = list.slice(0, maxDefinitions);
-
-		return topDefinitions.map((def) => ({
+		const definitions = list.map((def) => ({
 			definition: utils.cleanUDText(def.definition),
 			example: utils.cleanUDText(def.example),
-			thumbs_up: def.thumbs_up,
-			thumbs_down: def.thumbs_down,
+			thumbs_up: normalizeVoteCount(def.thumbs_up),
+			thumbs_down: normalizeVoteCount(def.thumbs_down),
+		}));
+		const votesUnavailable =
+			definitions.length >= 2 &&
+			definitions.every(
+				(definition) =>
+					definition.thumbs_up === 0 && definition.thumbs_down === 0,
+			);
+		const rankedDefinitions = votesUnavailable
+			? definitions
+			: [...definitions].sort((a, b) => b.thumbs_up - a.thumbs_up);
+
+		return rankedDefinitions.slice(0, 3).map((definition) => ({
+			...definition,
+			votesUnavailable,
 		}));
 	});
 }
