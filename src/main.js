@@ -1,6 +1,6 @@
 const lang = require("./lang.js");
 const urban = require("./urban.js");
-const gpt = require("./gpt.js");
+const ai = require("./ai.js");
 
 /**
  * Return the supported languages
@@ -73,10 +73,10 @@ function translate(query, completion) {
 				toParagraphs: formatDefinitions(definitions),
 			};
 
-			// Try to add GPT analysis if API key is provided
+			// Try to add AI analysis if API key is provided
 			if ($option.apiKey) {
 				try {
-					const gptAnalysis = await gpt.analyzeWithGPT(
+					const aiAnalysis = await ai.analyzeWithAI(
 						definitions,
 						detectTo,
 						source,
@@ -84,15 +84,15 @@ function translate(query, completion) {
 						$option,
 					);
 
-					// Add separator and GPT analysis
+					// Add separator and AI analysis
 					result.toParagraphs.push(
 						"\n=========================================\n",
 					);
-					result.toParagraphs.push("🤖 GPT Analysis:");
+					result.toParagraphs.push("AI Analysis:");
 
 					// Add each paragraph separately
-					const gptParagraphs = gptAnalysis.split("\n\n");
-					for (const paragraph of gptParagraphs) {
+					const aiParagraphs = aiAnalysis.split("\n\n");
+					for (const paragraph of aiParagraphs) {
 						if (paragraph.trim()) {
 							result.toParagraphs.push(paragraph.trim());
 						}
@@ -102,7 +102,7 @@ function translate(query, completion) {
 					result.toParagraphs.push(
 						"\n=========================================\n",
 					);
-					result.toParagraphs.push("❌ GPT Analysis Error:");
+					result.toParagraphs.push("AI Analysis Error:");
 					result.toParagraphs.push(error.message);
 				}
 			}
