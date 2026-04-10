@@ -1,18 +1,53 @@
 {
 	"identifier": "com.windfade.urban-dictionary",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"category": "translate",
 	"name": "Urban Dictionary",
-	"summary": "Search slang meanings on Urban Dictionary with GPT analysis",
+	"summary": "Search slang meanings on Urban Dictionary with AI analysis",
 	"author": "WindFade",
 	"homepage": "https://github.com/a322655/bob-plugin-urban-dictionary",
 	"minBobVersion": "0.5.0",
 	"options": [
 		{
+			"identifier": "provider",
+			"type": "menu",
+			"title": "AI Provider",
+			"desc": "Select which AI provider to use for analysis",
+			"defaultValue": "openai",
+			"menuValues": [
+				{
+					"title": "OpenAI",
+					"value": "openai"
+				},
+				{
+					"title": "Anthropic",
+					"value": "anthropic"
+				},
+				{
+					"title": "Custom (OpenAI Compatible)",
+					"value": "custom-openai"
+				},
+				{
+					"title": "Custom (Anthropic Compatible)",
+					"value": "custom-anthropic"
+				}
+			]
+		},
+		{
+			"identifier": "baseUrl",
+			"type": "text",
+			"title": "Custom Base URL",
+			"desc": "Base URL for custom providers (e.g., https://api.openai.com/v1 or https://api.anthropic.com). Version prefix (/v1, /v4, etc.) is auto-detected. Only required when using Custom providers.",
+			"textConfig": {
+				"type": "visible",
+				"placeholderText": "https://api.example.com"
+			}
+		},
+		{
 			"identifier": "apiKey",
 			"type": "text",
-			"title": "OpenAI API Key",
-			"desc": "Required for GPT analysis. Get one from https://platform.openai.com/account/api-keys",
+			"title": "API Key",
+			"desc": "API key for the selected provider. Required for AI analysis feature.",
 			"textConfig": {
 				"type": "secure",
 				"placeholderText": "sk-..."
@@ -22,7 +57,7 @@
 			"identifier": "model",
 			"type": "menu",
 			"title": "OpenAI Model",
-			"desc": "Select which model to use for analysis",
+			"desc": "Select which model to use for analysis. For non-OpenAI providers, select 'Custom' and enter the model name below.",
 			"defaultValue": "gpt-5.4",
 			"menuValues": [
 				{
@@ -48,13 +83,38 @@
 			]
 		},
 		{
+			"identifier": "anthropicModel",
+			"type": "menu",
+			"title": "Anthropic Model",
+			"desc": "Select which Anthropic model to use for analysis. Only applies when provider is Anthropic.",
+			"defaultValue": "claude-sonnet-4-6",
+			"menuValues": [
+				{
+					"title": "Claude Opus 4.6",
+					"value": "claude-opus-4-6"
+				},
+				{
+					"title": "Claude Sonnet 4.6",
+					"value": "claude-sonnet-4-6"
+				},
+				{
+					"title": "Claude Haiku 4.5",
+					"value": "claude-haiku-4-5"
+				},
+				{
+					"title": "Custom",
+					"value": "custom"
+				}
+			]
+		},
+		{
 			"identifier": "customModel",
 			"type": "text",
 			"title": "Custom Model Name",
-			"desc": "Enter custom model name when 'Custom' is selected above (e.g., gpt-5.4-mini)",
+			"desc": "Enter custom model name when 'Custom' is selected in the model menu above, or when using Custom providers.",
 			"textConfig": {
 				"type": "visible",
-				"placeholderText": "gpt-5.4-mini"
+				"placeholderText": "claude-sonnet-4-5"
 			}
 		}
 	]
