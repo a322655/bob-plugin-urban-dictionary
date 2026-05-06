@@ -5,7 +5,7 @@
 	"name": "Urban Dictionary",
 	"summary": "Search slang meanings on Urban Dictionary with AI analysis",
 	"author": "WindFade",
-	"homepage": "https://github.com/a322655/bob-plugin-urban-dictionary",
+	"homepage": "https://github.com/eigenigma/bob-plugin-urban-dictionary",
 	"minBobVersion": "0.5.0",
 	"options": [
 		{

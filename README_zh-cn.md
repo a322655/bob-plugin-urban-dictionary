@@ -22,7 +22,7 @@
 
 ### 安装步骤
 
-1. 从 [Releases](https://github.com/a322655/bob-plugin-urban-dictionary/releases) 页面下载最新的 `.bobplugin` 文件
+1. 从 [Releases](https://github.com/eigenigma/bob-plugin-urban-dictionary/releases) 页面下载最新的 `.bobplugin` 文件
 2. 双击下载的文件以在 Bob 中安装插件
 3. 在 Bob 偏好设置中启用该插件（如果需要 AI 分析功能，请在插件设置中选择提供商并填写对应的 API 密钥）
 

@@ -24,7 +24,7 @@ _Read this in [简体中文](README_zh-cn.md)_
 
 ### Installation Steps
 
-1. Download the latest `.bobplugin` file from the [Releases](https://github.com/a322655/bob-plugin-urban-dictionary/releases) page
+1. Download the latest `.bobplugin` file from the [Releases](https://github.com/eigenigma/bob-plugin-urban-dictionary/releases) page
 2. Double-click the downloaded file to install it in Bob
 3. Enable the plugin in Bob preferences (if you need the AI analysis feature, choose a provider and add the corresponding API key in the plugin settings)
 
