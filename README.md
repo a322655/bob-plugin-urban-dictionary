@@ -53,8 +53,9 @@ The plugin provides the following configuration options:
 | AI Provider       | Select OpenAI, Anthropic, or a compatible custom provider                    | No (defaults to OpenAI)       |
 | Custom Base URL   | Base URL for custom OpenAI-compatible or Anthropic-compatible providers       | Yes for Custom providers      |
 | API Key           | API key for the selected provider                                            | Yes for AI analysis           |
-| OpenAI Model      | Select an OpenAI preset model or choose Custom for other providers            | No (defaults to GPT-5.4)      |
-| Custom Model Name | Enter the exact model name when using Custom or a non-OpenAI provider         | Yes for non-OpenAI providers |
+| OpenAI Model      | Select a preset OpenAI model, or choose Custom to enter your own              | No (defaults to GPT-5.5)            |
+| Anthropic Model   | Select a preset Anthropic model, or choose Custom to enter your own           | No (defaults to Claude Sonnet 4.6)  |
+| Custom Model Name | Enter the exact model name when Custom is selected or using custom providers  | Yes when Custom is selected         |
 
 ### Provider Support
 
@@ -63,14 +64,23 @@ The plugin provides the following configuration options:
 - **Custom (OpenAI Compatible)**: Uses the Chat Completions API at `<baseUrl>/v1/chat/completions`.
 - **Custom (Anthropic Compatible)**: Uses the Messages API at `<baseUrl>/v1/messages`.
 
-The preset model dropdown is OpenAI-focused. For Anthropic or custom providers, select **Custom** and enter the exact model name in **Custom Model Name**.
+Each built-in provider has its own preset model dropdown (**OpenAI Model** and **Anthropic Model**). For custom providers, select **Custom** in the matching dropdown and enter the exact model name in **Custom Model Name**.
 
 Available OpenAI model options:
 
-- **GPT-5.4** (default, flagship model)
-- **GPT-5.4 Pro** (highest quality, uses more compute)
+- **GPT-5.5** (default, flagship model)
+- **GPT-5.5 Pro** (highest quality, uses more compute)
+- **GPT-5.4** (previous-generation flagship)
+- **GPT-5.4 Pro** (previous-generation, highest quality)
 - **GPT-5.4 Mini** (fast and cost-effective)
 - **GPT-5.4 Nano** (fastest and cheapest)
+- **Custom** (specify your own model name)
+
+Available Anthropic model options:
+
+- **Claude Opus 4.8** (most capable)
+- **Claude Sonnet 4.6** (default, balanced quality and speed)
+- **Claude Haiku 4.5** (fastest and cheapest)
 - **Custom** (specify your own model name)
 
 ## Contributing
