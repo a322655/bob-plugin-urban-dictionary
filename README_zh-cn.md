@@ -51,8 +51,9 @@
 | AI 提供商        | 选择 OpenAI、Anthropic 或兼容的自定义提供商              | 否（默认 OpenAI）       |
 | 自定义 Base URL  | 自定义 OpenAI 兼容或 Anthropic 兼容提供商的基础地址      | 仅自定义提供商必填      |
 | API 密钥         | 所选提供商的 API 密钥                                    | AI 分析功能必填         |
-| OpenAI 模型      | 选择 OpenAI 预设模型，或为其他提供商选择 Custom          | 否（默认 GPT-5.4）      |
-| 自定义模型名称   | 在选择 Custom 或使用非 OpenAI 提供商时填写精确模型名     | 非 OpenAI 提供商必填    |
+| OpenAI 模型      | 选择预设 OpenAI 模型，或选 Custom 自定义                 | 否（默认 GPT-5.5）            |
+| Anthropic 模型   | 选择预设 Anthropic 模型，或选 Custom 自定义              | 否（默认 Claude Sonnet 4.6） |
+| 自定义模型名称   | 在选择 Custom 或使用自定义提供商时填写精确模型名         | 选择 Custom 时必填           |
 
 ### 提供商支持
 
@@ -61,14 +62,23 @@
 - **自定义（OpenAI 兼容）**：使用 `<baseUrl>/v1/chat/completions` 的 Chat Completions API。
 - **自定义（Anthropic 兼容）**：使用 `<baseUrl>/v1/messages` 的 Messages API。
 
-预设模型下拉菜单主要面向 OpenAI。对于 Anthropic 或自定义提供商，请选择 **Custom**，然后在 **自定义模型名称** 中填写精确模型名。
+每个内置提供商都有各自的预设模型下拉菜单（**OpenAI 模型** 和 **Anthropic 模型**）。对于自定义提供商，请在对应的下拉菜单中选择 **Custom**，然后在 **自定义模型名称** 中填写精确模型名。
 
 可用的 OpenAI 模型选项：
 
-- **GPT-5.4**（默认，旗舰模型）
-- **GPT-5.4 Pro**（最高质量，使用更多算力）
+- **GPT-5.5**（默认，旗舰模型）
+- **GPT-5.5 Pro**（最高质量，使用更多算力）
+- **GPT-5.4**（上一代旗舰）
+- **GPT-5.4 Pro**（上一代，最高质量）
 - **GPT-5.4 Mini**（快速且经济）
 - **GPT-5.4 Nano**（最快最便宜）
+- **Custom**（自定义模型名称）
+
+可用的 Anthropic 模型选项：
+
+- **Claude Opus 4.8**（能力最强）
+- **Claude Sonnet 4.6**（默认，质量与速度均衡）
+- **Claude Haiku 4.5**（最快最便宜）
 - **Custom**（自定义模型名称）
 
 ## 贡献指南
