@@ -46,7 +46,7 @@ function resolveModel(provider, options) {
 			}
 			return options.customModel;
 		}
-		return options.model || "gpt-5.4";
+		return options.model || "gpt-5.5";
 	}
 
 	if (provider === ANTHROPIC_PROVIDER) {
