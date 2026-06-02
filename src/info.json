@@ -58,8 +58,16 @@
 			"type": "menu",
 			"title": "OpenAI Model",
 			"desc": "Select which model to use for analysis. For non-OpenAI providers, select 'Custom' and enter the model name below.",
-			"defaultValue": "gpt-5.4",
+			"defaultValue": "gpt-5.5",
 			"menuValues": [
+				{
+					"title": "GPT-5.5",
+					"value": "gpt-5.5"
+				},
+				{
+					"title": "GPT-5.5 Pro",
+					"value": "gpt-5.5-pro"
+				},
 				{
 					"title": "GPT-5.4",
 					"value": "gpt-5.4"
@@ -90,8 +98,8 @@
 			"defaultValue": "claude-sonnet-4-6",
 			"menuValues": [
 				{
-					"title": "Claude Opus 4.6",
-					"value": "claude-opus-4-6"
+					"title": "Claude Opus 4.8",
+					"value": "claude-opus-4-8"
 				},
 				{
 					"title": "Claude Sonnet 4.6",
